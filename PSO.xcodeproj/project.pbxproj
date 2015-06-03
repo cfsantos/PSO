@@ -14,6 +14,7 @@
 		913031BB1B1C7BF9000400AA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 913031BA1B1C7BF9000400AA /* Images.xcassets */; };
 		913031BE1B1C7BF9000400AA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 913031BC1B1C7BF9000400AA /* LaunchScreen.xib */; };
 		913031CA1B1C7BF9000400AA /* PSOTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 913031C91B1C7BF9000400AA /* PSOTests.m */; };
+		913031D51B1C7F7B000400AA /* PSOCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 913031D41B1C7F7B000400AA /* PSOCalculator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		913031C31B1C7BF9000400AA /* PSOTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PSOTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		913031C81B1C7BF9000400AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		913031C91B1C7BF9000400AA /* PSOTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSOTests.m; sourceTree = "<group>"; };
+		913031D31B1C7F7B000400AA /* PSOCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSOCalculator.h; sourceTree = "<group>"; };
+		913031D41B1C7F7B000400AA /* PSOCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSOCalculator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +92,8 @@
 				913031BA1B1C7BF9000400AA /* Images.xcassets */,
 				913031BC1B1C7BF9000400AA /* LaunchScreen.xib */,
 				913031AD1B1C7BF9000400AA /* Supporting Files */,
+				913031D31B1C7F7B000400AA /* PSOCalculator.h */,
+				913031D41B1C7F7B000400AA /* PSOCalculator.m */,
 			);
 			path = PSO;
 			sourceTree = "<group>";
@@ -221,6 +226,7 @@
 			files = (
 				913031B61B1C7BF9000400AA /* ViewController.m in Sources */,
 				913031B31B1C7BF9000400AA /* AppDelegate.m in Sources */,
+				913031D51B1C7F7B000400AA /* PSOCalculator.m in Sources */,
 				913031B01B1C7BF9000400AA /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
