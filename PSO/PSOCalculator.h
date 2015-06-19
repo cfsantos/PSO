@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 //defines the maximun number of particles
-#define MAXNUMBEROFPOSITIONS 10
+#define MAXNUMBEROFPOSITIONS 50
 
 @interface PSOCalculator : NSObject{
     //matrix of positions

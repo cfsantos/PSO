@@ -7,6 +7,7 @@
 //
 
 #import "PSOCalculator.h"
+#import "CHCSVParser.h"
 
 @implementation PSOCalculator
 
@@ -65,22 +66,39 @@
 
 -(void)calculate{
     
+    //creates a CSV file for graphs
+    NSString * filePath = @"~/testfile.csv";
+    filePath = [filePath stringByExpandingTildeInPath];
+    
+    NSLog(@"filepath = %@", filePath);
+    
+    CHCSVWriter * csvWriter = [[CHCSVWriter alloc] initForWritingToCSVFile:filePath];
+    [self csvWriter:csvWriter writeString:@"X Y Result"];
+    
     //initiate main arrays
     [self setBestPositions];
     [self setPositions];
     [self setVelocities];
     
     //defines the number of iteractions
-    for (int iteraction = 0; iteraction < 100; iteraction++) {
+    for (int iteraction = 0; iteraction < 10; iteraction++) {
+        //TODO: find out minimun and mediun value of the final iteraction over all particles 
+        
         
         //iteracts over all particles
         for (int counter = 0; counter < MAXNUMBEROFPOSITIONS; counter++) {
+            
+            float xPosition = positions[counter][0];
+            float yPosition = positions[counter][1] ;
             
             //gets the best value until now for this particle
             float bestValue = [self PSOFunctionForX:bestPositions[counter][0] andY:bestPositions[counter][1]];
             
             //gets the value for the right position of this particle
-            float aValue = [self PSOFunctionForX:positions[counter][0] andY:positions[counter][1]];
+            float aValue = [self PSOFunctionForX:positions[counter][0] andY:positions[counter][1] ] ;
+            NSString *numbersString = [NSString stringWithFormat:@"%.2f %.2f %.2f ",xPosition, yPosition, aValue];
+            //numbersString = [numbersString stringByReplacingOccurrencesOfString:@"." withString:@","];
+            [self csvWriter:csvWriter writeString:numbersString];
             
             //if this position is the best ever
             if (aValue < bestValue) {
@@ -152,6 +170,18 @@
 -(void)updatePositionInIndex:(int)index{
     positions[index][0] = positions[index][0] + velocity[index][0];
     positions[index][1] = positions[index][1] + velocity[index][1];
+}
+
+-(void)csvWriter:(CHCSVWriter *)csvWriter writeString:(NSString *)string{
+    [csvWriter writeField:string];
+    [csvWriter finishLine];
+}
+
+#pragma mark - calculus
+
+-(float)mediunValueOfParticles{
+    
+    return 0;
 }
 
 
