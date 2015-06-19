@@ -28,10 +28,10 @@
 //input: maximun value of function
 @property(nonatomic)float maximunValue;
 
-//input: maximun velocity of a particle
+//input: minimun velocity of a particle
 @property(nonatomic)float minimunVelocity;
 
-//input: minimun velocity of a particle
+//input: maximun velocity of a particle
 @property(nonatomic)float maximunVelocity;
 
 //output: best result got for this function
